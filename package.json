@@ -1,0 +1,31 @@
+{
+  "name": "burger-hb",
+  "version": "1.0.0",
+  "description": "Basic text-based Burger devouring App.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenncuenca/burger-hb.git"
+  },
+  "keywords": [
+    "express.js",
+    "burgers",
+    "node.js",
+    "handlebars",
+    "mysql"
+  ],
+  "author": "Jennifer Cuenca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jenncuenca/burger-hb/issues"
+  },
+  "homepage": "https://github.com/jenncuenca/burger-hb#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0"
+  }
+}
