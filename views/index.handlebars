@@ -1,0 +1,100 @@
+    <div class="container-fluid">
+    <center>
+      <div class="row">
+      <img src="assets/img/happy-burger.png" alt="Burger Img">
+    <div class="jumbotron">
+    <h1>WELCOME to EAT-DA-BURGER!</h1>      
+    <p>Choose a Burger from the list to devour. <br> 
+    Don't see a burger you like? Simply use the form below to create a new Burger of your choice to the list. On the left you get to keep track of all the delicious Burgers you devoured!</p>    
+        
+    </center>
+    
+
+      <br>
+<!-- BURGER COLUMNS -->
+  <div class="row">
+  <center>
+    <!-- BURGERS TO BE DEVOURED (LEFT SIDE) -->
+    <div class="col-md-4">
+      <h3 class="submitFont">Available Burgers</h3>
+      <div id="burgersAvailable">
+
+        <!-- ADD USER INPUTED BURGER DYNAMICALLY -->
+        {{#each burgers}}
+          {{#unless devoured}}
+          <form action="burger/eat/{{id}}" method="POST">
+            <div class="input-group">
+              <li class="form-control">{{id}}. {{burger_name}}</li>
+                <span class="input-group-btn">
+                  <button class="btn btn-success devour-button" type="submit">DEVOUR DA BURGER!</button>
+                </span>
+            </div>
+          </form>
+          {{/unless}}
+        {{/each}}
+
+      </div>
+    </div>
+
+    <div class="col-md-4"></div> 
+
+    <!-- DEVOURED BURGERS (RIGHT SIDE)-->
+    <div class="col-md-4">
+      <h3 class="submitFont">DEVOURED Burgers</h3>
+      <div id="alreadyEaten">
+
+        <!-- INSERT DEVOURED BURGERS DYNAMICALLY -->
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <div class="input-group">
+              <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
+            </div>
+          {{/if}}
+        {{/each}}
+
+      </div>
+    </div>
+  </center>
+</div>
+
+<!--BURGER FORM -->
+
+<br><br>
+
+      <!-- Input New Burgers Form -->
+      <form action="burger/create" method="POST"> 
+        
+        <!-- Text Area Input -->
+        <div class="row">
+          <!-- Empty Div to help center textarea -->
+          <div class="col-md-3"></div> 
+
+          <!-- Burger Input Box -->
+          <div class="form-group col-md-6">
+            <center><label for="new_burger" class="submitFont">Request A Different Burger!</label></center>
+            <textarea class="form-control" type="text" columns="6" rows="2" id="new_burger required value="" name="burger_name"></textarea>
+          </div>
+
+         
+          <div class="col-md-3"></div> 
+        </div>
+      
+        <!-- Submit Button -->
+        <center>
+          <button id="submit-button" type="submit" class="btn btn-info"> Make my Burger!</button>
+        </center>
+
+      </form>
+
+      <br>
+
+          <!-- FOOTER -->
+    <footer class="footer">
+      <p>
+        <a href="https://github.com/jenncuenca/burger-hb" target="_blank">GitHub Repo</a>
+      </p>
+
+    </footer>
+
+    </div>
+

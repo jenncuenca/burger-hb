@@ -6,7 +6,7 @@ var bodyParser = require("body-parser");
 
 var PORT = process.env.PORT || 8080;
 
-var app = express ();
+var app = express();
 
 // STATIC CONTENT for app from "public" directory //
 
@@ -24,17 +24,17 @@ app.use(bodyParser.json());
 var exphbs = require ("express-handlebars");
 
 app.engine("handlebars", exphbs ({ defaultLayout:
-main}));
+"main"}));
 
 app.set("view engine", "handlebars");
 
 // Server routes and access
 
-var routes = require ("./controllers/burgerController.js")
+var routes = require ("./controllers/burgers_controller.js")
 
-app.use(routes);
+app.use("/",routes);
 
 app.listen(PORT, function (){
-    console.log("The app is now listening to localhost: " + PORT);
+    console.log("App listening on PORT: " + PORT + "...");
 });
 
